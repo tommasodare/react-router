@@ -9,9 +9,9 @@ export default function ChiSiamo() {
 
         <>
 
-            <Header />
+            {/* <Header /> */}
             <Contacts />
-            <Footer />
+            {/* <Footer /> */}
 
         </>
 

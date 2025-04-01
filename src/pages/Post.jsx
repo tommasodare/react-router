@@ -8,9 +8,9 @@ export default function Post() {
 
         <>
 
-            <Header />
+            {/* <Header /> */}
             <MainPost />
-            <Footer />
+            {/* <Footer /> */}
 
         </>
 

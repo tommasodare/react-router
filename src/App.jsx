@@ -3,6 +3,9 @@ import HomePage from "./pages/HomePage.jsx"
 import Post from "./pages/Post.jsx"
 import ChiSiamo from "./pages/ChiSiamo.jsx"
 
+//Layout
+import DefaultLayout from "./layout/DefaultLayout.jsx"
+
 
 export default function App() {
 
@@ -12,9 +15,11 @@ export default function App() {
 
       <Routes>
 
-        <Route path="/" element={<HomePage />} />
-        <Route path="/post" element={<Post />} />
-        <Route path="/chi-siamo" element={<ChiSiamo />} />
+        <Route element={<DefaultLayout />} >
+          <Route path="" element={<HomePage />} />
+          <Route path="/post" element={<Post />} />
+          <Route path="/chi-siamo" element={<ChiSiamo />} />
+        </Route>
 
       </Routes>
 

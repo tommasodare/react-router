@@ -8,9 +8,9 @@ export default function HomePage() {
 
         <>
 
-            <Header />
+            {/* <Header /> */}
             <Main />
-            <Footer />
+            {/* <Footer /> */}
 
 
         </>

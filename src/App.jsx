@@ -1,7 +1,6 @@
-import { BrowserRouter } from "react-router-dom"
-import Header from "./components/Header"
-import Main from "./components/Main"
-import Footer from "./components/Footer"
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import HomePage from "./pages/HomePage.jsx"
+
 
 export default function App() {
 
@@ -9,10 +8,13 @@ export default function App() {
 
     <>
 
-      <Header />
-      <Main />
-      <Footer />
-
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/post" element={<HomePage />} />
+          <Route path="/chi-siamo" element={<HomePage />} />
+        </Routes>
+      </BrowserRouter>
 
     </>
 

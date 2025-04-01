@@ -16,9 +16,11 @@ export default function App() {
       <Routes>
 
         <Route element={<DefaultLayout />} >
+
           <Route path="" element={<HomePage />} />
           <Route path="/post" element={<Post />} />
           <Route path="/chi-siamo" element={<ChiSiamo />} />
+
         </Route>
 
       </Routes>

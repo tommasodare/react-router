@@ -19,6 +19,8 @@ export default function Prodotto() {
     return (
 
         <>
+
+
             <div className="container m-4">
                 <h1>{product.title}</h1>
                 <img style={{ width: "200px" }} src={product.image} alt="" />

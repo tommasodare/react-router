@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 
 
 export default function Prodotto() {
 
     const [product, setProdotto] = useState("")
+    const navigate = useNavigate()
     const { id } = useParams()
 
     useEffect(() => {
@@ -23,8 +24,12 @@ export default function Prodotto() {
                 <img style={{ width: "200px" }} src={product.image} alt="" />
                 <p>{product.description}</p>
                 <p>Price: ${product.price}</p>
-
+                <button className="back btn btn-primary p-1" onClick={() => navigate("/post")}>
+                    Torna alla lista dei prodotti
+                </button>
             </div>
+
+
         </>
 
 

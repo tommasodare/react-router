@@ -29,8 +29,12 @@ export default function Test() {
         }
     ];
 
-    function handleClick() {
+    const [selectedLanguage, setSelectedLanguage] = useState("");
+
+
+    function handleClick(linguaggioCliccato) {
         console.log("Botton cliccato");
+        setSelectedLanguage(linguaggioCliccato);
 
     }
 
@@ -44,22 +48,34 @@ export default function Test() {
                 <h1>Use-State Test</h1>
             </header>
 
-            <main>
+            <main className="text-center d-flex flex-column justify-content-center align-items-center">
+
                 <div className="container mt-5">
                     <h2>Web Languages</h2>
                     {webLanguages.map((language, index) => {
                         return (
-                            <button onClick={handleClick} className="btn btn-primary p-1 m-2" key={index}>{language.name}</button>
+                            <button onClick={() => handleClick(language)} className={`btn m-2 ${selectedLanguage && selectedLanguage.name === language.name
+                                ? 'btn-warning'
+                                : 'btn-primary'
+                                }`} key={index}>{language.name}</button>
                         )
                     })}
                 </div>
 
 
                 <div className="container mt-5">
-                    <div className="card text-center" style={{ width: "18rem" }}>
+                    <div className="card">
                         <div className="card-body">
-                            <h5 className="card-title">{webLanguages[0].name}</h5>
-                            <p className="card-text">{webLanguages[0].description}</p>
+                            {selectedLanguage ? (
+                                // Se selectedLanguage esiste, mostra i dettagli
+                                <>
+                                    <h5 className="card-title">{selectedLanguage.name}</h5>
+                                    <p className="card-text">{selectedLanguage.description}</p>
+                                </>
+                            ) : (
+                                // Se selectedLanguage è null, mostra il messaggio di default
+                                <p className="card-text">Nessun linguaggio selezionato</p>
+                            )}
                         </div>
                     </div>
                 </div>
